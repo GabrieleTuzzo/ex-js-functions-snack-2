@@ -75,15 +75,12 @@ function creaContatoreAutomatico(time) {
 // Crea una funzione che ferma un timer dopo un certo tempo
 // Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop.
 
-function eseguiEferma(message, startTime, stopTime) {
-    let interval;
-    setTimeout(() => {
-        interval = setInterval(() => {
-            console.log(message);
-        }, 1000);
-    }, startTime);
+function eseguiEferma(message, interval, stopTime) {
+    const printMessage = setInterval(() => {
+        console.log(message);
+    }, interval);
 
     setTimeout(() => {
-        clearInterval(interval);
+        clearInterval(printMessage);
     }, stopTime);
 }
